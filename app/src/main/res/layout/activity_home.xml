@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#282731"
+    tools:context=".Home">
+
+    <ImageView
+        android:layout_width="68dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/logo_hermes"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="Hermes"
+        android:textAllCaps="true"
+        android:textColor="#F3F3F3"
+        android:textSize="48dp"
+        android:textStyle="normal"
+        android:fontFamily="Lora"
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:background="#282731"
+        android:hint="Adresse email ou numéro de téléphone"
+        android:inputType="textPersonName"
+        android:textSize="13dp"
+        android:textColorHint="#8CF5F5F5"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="#282731"
+        android:hint="Mot de passe"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textSize="13dp"
+        android:textColorHint="#8CF5F5F5"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="211dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:background="#000000"
+        android:text="Se connecter"
+        android:textAllCaps="false"
+        android:textSize="13dp"
+        android:textColor="#C4C4C4"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/createAccount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/createAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Créer un compte"
+        android:textAllCaps="false"
+        android:textColor="#66F5F5F5"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/passwordForgotten"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/passwordForgotten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="Mot de passe oublié"
+        android:textColor="#66F5F5F5"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
