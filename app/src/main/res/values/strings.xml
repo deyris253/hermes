@@ -7,5 +7,4 @@
     -->
     <string name="hello_world">Hello Square World!</string>
     <string name="title_activity_password_forgotten">PasswordForgotten</string>
-    <string name="title_activity_f">FActivity</string>
 </resources>
