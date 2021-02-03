@@ -1,25 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_hermes">
 
-    android:padding="@dimen/box_inset_layout_padding"
-    tools:context=".CreateAccount"
-    tools:deviceIds="wear">
+    <ImageView
+        android:src="@drawable/logo_hermes"
+        android:layout_width="68dp"
+        android:layout_height="78dp"
+        android:layout_marginLeft="172dp"
+        android:layout_marginTop="151dp"/>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/inner_frame_layout_padding"
-        >
+    <EditText
+        android:id="@+id/fullName"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="280dp"
+        android:background="@color/background_hermes"
+        android:hint="Nom"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColorHint="#8CF5F5F5"
+        android:textColor="#8CF5F5F5"
+        android:textSize="13sp" />
 
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hello_world" />
+    <EditText
+        android:id="@+id/firstName"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="330dp"
+        android:background="@color/background_hermes"
+        android:hint="Prénom"
+        android:inputType="text|textPersonName"
+        android:padding="10dp"
+        android:textColorHint="#8CF5F5F5"
+        android:textColor="#8CF5F5F5"
+        android:textSize="13sp" />
 
-    </FrameLayout>
-</androidx.wear.widget.BoxInsetLayout>
+    <EditText
+        android:id="@+id/phoneNumber"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="380dp"
+        android:background="@color/background_hermes"
+        android:hint="Numéro de téléphone"
+        android:inputType="text|number"
+        android:padding="10dp"
+        android:textColorHint="#8CF5F5F5"
+        android:textColor="#8CF5F5F5"
+        android:textSize="13sp" />
+
+    <EditText
+        android:id="@+id/passwordCreation"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="430dp"
+        android:background="@color/background_hermes"
+        android:hint="Mot de passe"
+        android:inputType="text|textPassword"
+        android:padding="10dp"
+        android:textColorHint="#8CF5F5F5"
+        android:textColor="#8CF5F5F5"
+        android:textSize="13sp" />
+
+    <EditText
+        android:id="@+id/confirmPassword"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="480dp"
+        android:background="@color/background_hermes"
+        android:hint="Confirmer le mot de passe"
+        android:inputType="text|textPassword"
+        android:padding="10dp"
+        android:textColorHint="#8CF5F5F5"
+        android:textColor="#8CF5F5F5"
+        android:textSize="13sp" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="107dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="152dp"
+        android:layout_marginTop="540dp"
+        android:background="@color/background_hermes"
+        android:text="Créer mon compte"
+        android:textColor="#C4C4C4"
+        android:textSize="13sp" />
+
+    <Button
+        android:id="@+id/returnHome"
+        android:layout_width="107dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="152dp"
+        android:layout_marginTop="620dp"
+        android:background="@color/background_hermes"
+        android:text="Vous avez déjà un compte ? Connectez-vous ici"
+        android:textAllCaps="false"
+        android:textColor="#C4C4C4"
+        android:textSize="13sp" />
+
+</RelativeLayout>

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/margin"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#282731">
+    android:background="@color/background_hermes">
 
     <ImageView
-        android:src="@drawable/logo_hermes"
         android:layout_width="68dp"
         android:layout_height="78dp"
         android:layout_marginLeft="172dp"
-        android:layout_marginTop="151dp"/>
+        android:layout_marginTop="151dp"
+        android:src="@drawable/logo_hermes" />
 
     <TextView
         android:id="@+id/textView"
@@ -17,9 +18,9 @@
         android:layout_height="57dp"
         android:layout_marginLeft="93dp"
         android:layout_marginTop="293dp"
+        android:fontFamily="Lora"
         android:gravity="center_horizontal|bottom"
         android:text="Hermes"
-        android:fontFamily="Lora"
         android:textAllCaps="true"
         android:textColor="#F3F3F3"
         android:textSize="48sp"
@@ -31,12 +32,12 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="413dp"
-        android:background="#282731"
+        android:background="@color/background_hermes"
         android:hint="Adresse email ou numéro de téléphone"
-        android:inputType="textEmailAddress"
+        android:inputType="text|textEmailAddress"
         android:padding="10dp"
-        android:textColorHint="#8CF5F5F5"
         android:textColor="#8CF5F5F5"
+        android:textColorHint="#8CF5F5F5"
         android:textSize="13sp" />
 
     <EditText
@@ -44,43 +45,48 @@
         android:layout_width="379dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="474dp"
-        android:background="#282731"
+        android:layout_marginTop="463dp"
+        android:background="@color/background_hermes"
         android:hint="Mot de passe"
         android:inputType="textPassword"
         android:padding="10dp"
-        android:textColorHint="#8CF5F5F5"
         android:textColor="#8CF5F5F5"
+        android:textColorHint="#8CF5F5F5"
         android:textSize="13sp" />
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="107dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginLeft="152dp"
         android:layout_marginTop="520dp"
+        android:background="@color/background_hermes"
         android:text="Se connecter avec"
         android:textAllCaps="false"
         android:textColor="#C4C4C4"
         android:textSize="13sp" />
 
-    <TextView
+    <Button
         android:id="@+id/createAccount"
         android:layout_width="110dp"
         android:layout_height="15dp"
-        android:layout_marginLeft="29dp"
+        android:layout_alignLeft="@id/password"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="620dp"
+        android:background="@color/background_hermes"
         android:text="Créer un compte"
         android:textColor="#66F5F5F5"
         android:textSize="13sp" />
 
-    <TextView
+    <Button
         android:id="@+id/passwordForgotten"
         android:layout_width="127dp"
         android:layout_height="15dp"
-        android:layout_marginLeft="255dp"
         android:layout_alignRight="@id/password"
+        android:layout_marginLeft="255dp"
         android:layout_marginTop="620dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/background_hermes"
         android:text="Mot de passe oublié"
         android:textColor="#66F5F5F5"
         android:textSize="13sp" />

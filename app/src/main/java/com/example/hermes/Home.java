@@ -20,8 +20,8 @@ public class Home extends AppCompatActivity {
     private EditText vPassword;
     private Button vLoginButton;
 
-    private TextView vCreateButton;
-    private TextView vPasswordForgottenButton;
+    private Button vCreateButton;
+    private Button vPasswordForgottenButton;
 
 
     @Override
@@ -40,21 +40,22 @@ public class Home extends AppCompatActivity {
         vLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = vEmail.getText().toString().trim();
-                String password = vPassword.getText().toString().trim();
+                String sEmail = vEmail.getText().toString().trim();
+                String sPassword = vPassword.getText().toString().trim();
 
-                if(TextUtils.isEmpty(email)) {
-                    vEmail.setError("Error !");
+                if (TextUtils.isEmpty(sEmail)) {
+                    vEmail.setError("Veuillez indiquer votre email.");
                 }
 
-                if(TextUtils.isEmpty(password)) {
-                    vEmail.setError("Your password is required.");
+                if (TextUtils.isEmpty(sPassword)) {
+                    vPassword.setError("Veuillez indiquer votre mot de passe.");
                 }
 
-                if(password.length()<6) {
-                    vPassword.setError("Your password must contain at least 6 characters.");
+                if (sPassword.length() < 7) {
+                    vPassword.setError("Votre mot de passe doit contenir au moins 7 caractères.");
                 }
-
+            }
+        });
 
              /* vFirebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                  @Override
@@ -63,19 +64,18 @@ public class Home extends AppCompatActivity {
                  }
              }) */
 
-                vCreateButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        startActivity(new Intent(getApplicationContext(), CreateAccount.class));
-                    }
-                });
 
-                vPasswordForgottenButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        startActivity(new Intent(getApplicationContext(), PasswordForgotten.class));
-                    }
-                });
+        vCreateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), CreateAccount.class));
+            }
+        });
+
+        vPasswordForgottenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), PasswordForgotten.class));
             }
         });
 
