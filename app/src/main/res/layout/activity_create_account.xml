@@ -83,23 +83,26 @@
 
     <Button
         android:id="@+id/register"
-        android:layout_width="107dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="152dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="540dp"
-        android:background="@color/background_hermes"
+        android:padding="0dp"
+        android:backgroundTint="@color/background_hermes"
         android:text="Créer mon compte"
+        android:textAllCaps="false"
         android:textColor="#C4C4C4"
         android:textSize="13sp" />
 
     <Button
         android:id="@+id/returnHome"
-        android:layout_width="107dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="152dp"
-        android:layout_marginTop="620dp"
-        android:background="@color/background_hermes"
-        android:text="Vous avez déjà un compte ? Connectez-vous ici"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="600dp"
+        android:padding="0dp"
+        android:backgroundTint="@color/background_hermes"
+        android:text="Vous avez déjà un compte ? Connectez-vous"
         android:textAllCaps="false"
         android:textColor="#C4C4C4"
         android:textSize="13sp" />
