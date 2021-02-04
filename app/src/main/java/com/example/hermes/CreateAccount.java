@@ -16,6 +16,7 @@ public class CreateAccount extends AppCompatActivity {
     private FirebaseAuth vFirebaseAuth;
     private EditText vFirstName;
     private EditText vFullName;
+    private EditText vEmail;
     private EditText vPhoneNumber;
     private EditText vPassword;
     private EditText vConfirmPassword;
@@ -31,6 +32,7 @@ public class CreateAccount extends AppCompatActivity {
         vFirebaseAuth = FirebaseAuth.getInstance();
         vFullName = findViewById(R.id.fullName);
         vFirstName = findViewById(R.id.firstName);
+        vEmail = findViewById(R.id.email);
         vPhoneNumber = findViewById(R.id.phoneNumber);
         vPassword = findViewById(R.id.passwordCreation);
         vConfirmPassword = findViewById(R.id.confirmPassword);
@@ -42,6 +44,7 @@ public class CreateAccount extends AppCompatActivity {
             public void onClick(View v) {
                 String sFullName = vFullName.getText().toString().trim();
                 String sFirstName = vFirstName.getText().toString().trim();
+                String sEmail = vEmail.getText().toString().trim();
                 String sPhoneNumber = vPhoneNumber.getText().toString().trim();
                 String sPassword = vPassword.getText().toString().trim();
                 String sConfirmPassword = vConfirmPassword.getText().toString().trim();
@@ -52,6 +55,10 @@ public class CreateAccount extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(sFirstName)) {
                     vFirstName.setError("Veuillez indiquer votre prénom.");
+                }
+
+                if (TextUtils.isEmpty(sEmail)) {
+                    vEmail.setError("Veuillez indiquer votre email.");
                 }
 
                 if (TextUtils.isDigitsOnly(sPhoneNumber)) {
