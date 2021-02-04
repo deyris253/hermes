@@ -30,8 +30,8 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         vFirebaseAuth = FirebaseAuth.getInstance();
-        vEmail = findViewById(R.id.email);
-        vPassword = findViewById(R.id.password);
+        vEmail = findViewById(R.id.typeEmail);
+        vPassword = findViewById(R.id.typePassword);
         vLoginButton = findViewById(R.id.loginButton);
         vCreateButton = findViewById(R.id.createAccount);
         vPasswordForgottenButton = findViewById(R.id.passwordForgotten);
