@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/margin"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/background_hermes">
@@ -53,8 +52,8 @@
         android:textColorHint="#8CF5F5F5"
         android:textSize="13sp" />
 
-    <Button
-        android:id="@+id/loginButton"
+    <TextView
+        android:id="@+id/loginChoice"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_centerHorizontal="true"
@@ -70,22 +69,21 @@
 
     <ImageButton
         android:src="@drawable/logo_facebook"
+        android:id="@+id/facebookButton"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignStart="@+id/loginButton"
-        android:backgroundTint="@color/background_hermes"
-        android:layout_marginTop="553dp" />
+        android:layout_alignStart="@+id/loginChoice"
+        android:layout_marginTop="553dp"
+        android:backgroundTint="@color/background_hermes" />
 
     <ImageButton
         android:src="@drawable/logo_google"
         android:id="@+id/googleButton"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignEnd="@+id/loginButton"
-        android:backgroundTint="@color/background_hermes"
-        android:layout_marginTop="553dp" />
-
-
+        android:layout_alignEnd="@+id/loginChoice"
+        android:layout_marginTop="553dp"
+        android:backgroundTint="@color/background_hermes"/>
 
     <Button
         android:id="@+id/createAccount"
