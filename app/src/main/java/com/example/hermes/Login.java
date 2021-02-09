@@ -4,20 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Login extends AppCompatActivity {
+public class Login extends AppCompatActivity implements View.OnClickListener {
 
+    private static final int RC_SIGN_IN = 7544;
     private EditText vEmail;
     private EditText vPassword;
     private Button vLoginButton;
     private FirebaseAuth vFirebaseAuth;
+
+    private GoogleSignInClient vGoogleSignClient;
 
     private Button vCreateButton;
     private Button vPasswordForgottenButton;
@@ -35,27 +39,16 @@ public class Login extends AppCompatActivity {
         vCreateButton = findViewById(R.id.createAccount);
         vPasswordForgottenButton = findViewById(R.id.passwordForgotten);
 
+        findViewById(R.id.googleButton).setOnClickListener(this);
 
-        vLoginButton.setOnClickListener(v -> {
-            String sEmail = vEmail.getText().toString();
-            String sPassword = vPassword.getText().toString();
 
-            if ((sEmail.isEmpty() || sEmail.length() < 0) && (sPassword.isEmpty() || sPassword.length() < 7)) {
-                vEmail.setError("Veuillez indiquer votre email.");
-                vPassword.setError("Votre mot de passe doit contenir au moins 7 caractères.");
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
 
-            } else {
-                startActivity(new Intent(getApplication(), Home.class));
-            }
-        });
+        vGoogleSignClient = GoogleSignIn.getClient(this, gso);
 
-             /* vFirebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                 @Override
-                 public void onComplete(@NonNull Task<AuthResult> task) {
-
-                 }
-             }) */
-
+        vGoogleSignClient.signOut();
 
         vCreateButton.setOnClickListener(v -> startActivity(new Intent(getApplication(), CreateAccount.class)));
 
@@ -63,4 +56,15 @@ public class Login extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.googleButton) {
+            signIn();
+        }
+    }
+
+    private void signIn() {
+        Intent signInIntent = vGoogleSignClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
 }

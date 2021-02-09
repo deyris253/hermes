@@ -14,4 +14,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="151dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="57dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="293dp"
+        android:text="@string/app_name"
+        android:fontFamily="@font/lora"
+        android:textAllCaps="true"
+        android:textColor="#F3F3F3"
+        android:textSize="48sp" />
+
 </RelativeLayout>

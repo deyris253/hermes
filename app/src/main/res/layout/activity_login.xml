@@ -68,19 +68,24 @@
         android:textColor="#C4C4C4"
         android:textSize="16sp" />
 
-    <ImageView
+    <ImageButton
         android:src="@drawable/logo_facebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignStart="@+id/loginButton"
+        android:backgroundTint="@color/background_hermes"
         android:layout_marginTop="553dp" />
 
-    <ImageView
+    <ImageButton
         android:src="@drawable/logo_google"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/googleButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignEnd="@+id/loginButton"
+        android:backgroundTint="@color/background_hermes"
         android:layout_marginTop="553dp" />
+
+
 
     <Button
         android:id="@+id/createAccount"
