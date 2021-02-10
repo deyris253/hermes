@@ -22,42 +22,12 @@
         android:textColor="#F3F3F3"
         android:textSize="48sp" />
 
-   <EditText
-        android:id="@+id/typeEmail"
-        android:layout_width="353dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="413dp"
-        android:padding="10dp"
-        android:background="@drawable/border"
-        android:hint="Adresse email ou numéro de téléphone"
-        android:inputType="textEmailAddress"
-        android:fontFamily="@font/roboto"
-        android:textColor="#8CF5F5F5"
-        android:textColorHint="#8CF5F5F5"
-        android:textSize="13sp" />
-
-    <EditText
-        android:id="@+id/typePassword"
-        android:layout_width="353dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="463dp"
-        android:padding="10dp"
-        android:background="@drawable/border"
-        android:hint="Mot de passe"
-        android:inputType="textPassword"
-        android:fontFamily="@font/roboto"
-        android:textColor="#8CF5F5F5"
-        android:textColorHint="#8CF5F5F5"
-        android:textSize="13sp" />
-
     <TextView
         android:id="@+id/loginChoice"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="510dp"
+        android:layout_marginTop="450dp"
         android:padding="0dp"
         android:backgroundTint="@color/background_hermes"
         style="?android:attr/borderlessButtonStyle"
@@ -73,7 +43,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_alignStart="@+id/loginChoice"
-        android:layout_marginTop="553dp"
+        android:layout_marginTop="500dp"
         android:backgroundTint="@color/background_hermes" />
 
     <ImageButton
@@ -82,34 +52,19 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_alignEnd="@+id/loginChoice"
-        android:layout_marginTop="553dp"
-        android:backgroundTint="@color/background_hermes"/>
+        android:layout_marginTop="500dp"
+        android:backgroundTint="@color/background_hermes" />
 
     <Button
-        android:id="@+id/createAccount"
+        android:id="@+id/googleSignOut"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginTop="625dp"
-        android:padding="0dp"
-        android:layout_alignStart="@id/typePassword"
-        android:backgroundTint="@color/background_hermes"
-        style="?android:attr/borderlessButtonStyle"
-        android:text="Créer un compte"
-        android:fontFamily="@font/roboto"
-        android:textAllCaps="false"
-        android:textColor="#66F5F5F5"
-        android:textSize="13sp" />
-
-    <Button
-        android:id="@+id/passwordForgotten"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_alignEnd="@id/typePassword"
-        android:layout_marginTop="625dp"
+        android:layout_centerHorizontal="true"
         android:padding="0dp"
         android:backgroundTint="@color/background_hermes"
         style="?android:attr/borderlessButtonStyle"
-        android:text="Mot de passe oublié"
+        android:text="Déconnexion"
         android:fontFamily="@font/roboto"
         android:textAllCaps="false"
         android:textColor="#66F5F5F5"

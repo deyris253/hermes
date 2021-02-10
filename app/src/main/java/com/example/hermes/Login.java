@@ -2,35 +2,27 @@ package com.example.hermes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 
-import org.w3c.dom.Text;
-
 import java.util.Arrays;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
-
-    private EditText vEmail;
-    private EditText vPassword;
-    private TextView vLoginChoice;
-    private FirebaseAuth vFirebaseAuth;
 
     CallbackManager callbackManager;
 
@@ -38,22 +30,19 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private GoogleSignInClient vGoogleSignClient;
 
-    private Button vCreateButton;
-    private Button vPasswordForgottenButton;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        vFirebaseAuth = FirebaseAuth.getInstance();
-        vEmail = findViewById(R.id.typeEmail);
-        vPassword = findViewById(R.id.typePassword);
-        vLoginChoice = findViewById(R.id.loginChoice);
-        vCreateButton = findViewById(R.id.createAccount);
-        vPasswordForgottenButton = findViewById(R.id.passwordForgotten);
 
+        FirebaseAuth.getInstance();
+        findViewById(R.id.loginChoice);
 
         callbackManager = CallbackManager.Factory.create();
 
@@ -92,9 +81,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         vGoogleSignClient.signOut();
 
-        vCreateButton.setOnClickListener(v -> startActivity(new Intent(getApplication(), CreateAccount.class)));
-
-        vPasswordForgottenButton.setOnClickListener(v -> startActivity(new Intent(getApplication(), PasswordForgotten.class)));
+        findViewById(R.id.googleSignOut).setOnClickListener(v -> startActivity(new Intent(getApplication(), Login.class)));
 
     }
 
@@ -115,4 +102,5 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         Intent signInIntent = vGoogleSignClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
+
 }
