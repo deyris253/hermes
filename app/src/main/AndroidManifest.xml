@@ -35,8 +35,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Home" />
-        <activity android:name=".CreateAccount" />
-        <activity android:name=".PasswordForgotten" />
     </application>
 
 </manifest>
