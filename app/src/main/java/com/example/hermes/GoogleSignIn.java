@@ -4,13 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.facebook.CallbackManager;
-import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -23,11 +20,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-import java.util.Arrays;
 
 public class GoogleSignIn extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "GoogleActivity";
+    private static final String TAG = "GoogleSignIn";
     private static final int RC_SIGN_IN = 4413;
 
     private GoogleSignInClient vGoogleSignInClient;
@@ -69,33 +65,15 @@ public class GoogleSignIn extends AppCompatActivity implements View.OnClickListe
             Task<GoogleSignInAccount> task = com.google.android.gms.auth.api.signin.GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
+                Log.w(TAG, "Enfin Connecté !");
                 Intent i = new Intent(GoogleSignIn.this, Home.class);
                 startActivity(i);
             } catch (ApiException e) {
-                Log.w(TAG, "Sign In failed", e);
+                Log.w(TAG, "Toujours pas Connecté !");
             }
         }
 
     }
-
-    private void firebaseAuthWithGoogle(String idToken) {
-        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
-        vAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Log.d(TAG, "signInWithCredential SUCCESS");
-                            FirebaseUser user = vAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            Log.w(TAG, "signInWithCredential FAILURE", task.getException());
-                            updateUI(null);
-                        }
-                    }
-                });
-    }
-
 
     @Override
     public void onClick(View v) {
@@ -110,8 +88,23 @@ public class GoogleSignIn extends AppCompatActivity implements View.OnClickListe
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
-    private void updateUI(FirebaseUser user) {
-
+    /* private void firebaseAuthWithGoogle(String idToken) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
+        vAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "signInWithCredential SUCCESS");
+                        FirebaseUser user = vAuth.getCurrentUser();
+                        updateUI(user);
+                    } else {
+                        Log.w(TAG, "signInWithCredential FAILURE", task.getException());
+                        updateUI(null);
+                    }
+                });
     }
+
+    private void updateUI(FirebaseUser user) {} */
+
+
 
 }

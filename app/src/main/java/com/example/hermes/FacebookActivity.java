@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
@@ -23,8 +22,6 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.security.PrivateKey;
-import java.util.Arrays;
 
 public class FacebookActivity extends AppCompatActivity {
 
@@ -49,6 +46,8 @@ public class FacebookActivity extends AppCompatActivity {
         LoginManager.getInstance().registerCallback(vCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
+                Intent i = new Intent(FacebookActivity.this, Home.class);
+                startActivity(i);
 
             }
 
