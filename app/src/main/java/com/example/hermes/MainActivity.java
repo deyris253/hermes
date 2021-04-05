@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import com.facebook.login.LoginManager;
 
+import java.util.Arrays;
+
 public class MainActivity extends GoogleSignIn {
 
     @Override
@@ -13,7 +15,7 @@ public class MainActivity extends GoogleSignIn {
 
         findViewById(R.id.googleButton).setOnClickListener(this);
 
-        // findViewById(R.id.facebookButton).setOnClickListener(v -> LoginManager.getInstance().logInWithReadPermissions(this,Arrays.asList("public_profile", "user_friends")));
+        // findViewById(R.id.facebookButton).setOnClickListener(v -> LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "user_friends")));
     }
 }
 
