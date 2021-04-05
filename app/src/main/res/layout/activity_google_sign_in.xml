@@ -7,9 +7,6 @@
     tools:context=".Home"
     android:background="@color/background_hermes">
 
-    <ImageView
-        android:src="@drawable/map"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent" />
+
 
 </RelativeLayout>
